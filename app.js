@@ -18,9 +18,7 @@ const mongoose = require('mongoose');
 require('dotenv').config({path:'./config.env'})
 
 // Security Middleware Implement
-app.use(cors({
-    origin: 'https://main--imaginative-souffle-10dfbd.netlify.app/Login',
-}))
+app.use(cors());
 
 app.use(helmet())
 app.use(mongoSanitize())
