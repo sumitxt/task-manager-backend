@@ -1,6 +1,6 @@
 const express = require('express');
-const UsersController = require("../controllers/UsersController");
-const TasksController = require("../controllers/TasksController");
+const UsersController = require("../controllers/usersController");
+const TasksController = require("../controllers/tasksController");
 const AuthVerifyMiddleware = require("../middleware/AuthVerifyMiddleware");
 
 
