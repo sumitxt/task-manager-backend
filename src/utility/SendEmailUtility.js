@@ -1,6 +1,6 @@
 var nodemailer = require('nodemailer');
 
-const SendEmailUtility= async (EmailTo, EmailText, EmailSubject) => {
+const SendEmailUtility = async (EmailTo, EmailText, EmailSubject) => {
 
     let transporter = nodemailer.createTransport({
         host: 'smtp-relay.sendinblue.com',
@@ -9,7 +9,7 @@ const SendEmailUtility= async (EmailTo, EmailText, EmailSubject) => {
         auth: {
             user: "sumitbarua14@gmail.com",
             pass: 'jpQcDfJ6GBEr5MS4'
-        },tls: {
+        }, tls: {
             rejectUnauthorized: false
         },
     });
@@ -22,8 +22,8 @@ const SendEmailUtility= async (EmailTo, EmailText, EmailSubject) => {
         text: EmailText
     };
 
-    
-   return  await transporter.sendMail(mailOptions)
+
+    return await transporter.sendMail(mailOptions)
 
 }
-module.exports=SendEmailUtility
+module.exports = SendEmailUtility
