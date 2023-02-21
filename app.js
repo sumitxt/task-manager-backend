@@ -14,6 +14,9 @@ const cors = require('cors');
 // Database Lib Import
 const mongoose = require('mongoose');
 
+//config input
+require('dotenv').config({path:'./config.env'})
+
 // Security Middleware Implement
 app.use(cors())
 app.use(helmet())
