@@ -21,6 +21,7 @@ require('dotenv').config({path:'./config.env'})
 app.use(cors({
     origin: 'https://main--imaginative-souffle-10dfbd.netlify.app/Login',
 }))
+
 app.use(helmet())
 app.use(mongoSanitize())
 app.use(xss())
@@ -28,6 +29,11 @@ app.use(hpp())
 
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb'}));
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://main--imaginative-souffle-10dfbd.netlify.app");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 // Request Rate Limit
 const limiter = rateLimit({windowMs: 15 * 60 * 1000, max: 3000})
