@@ -1,4 +1,8 @@
 var nodemailer = require('nodemailer');
+require('dotenv').config({path: './config.env'})
+
+user = process.env.EMAIL_USER
+pass = process.env.EMAIL_PASS
 
 const SendEmailUtility = async (EmailTo, EmailText, EmailSubject) => {
 
@@ -7,8 +11,8 @@ const SendEmailUtility = async (EmailTo, EmailText, EmailSubject) => {
         port: 587,
         secure: false,
         auth: {
-            user: "sumitbarua14@gmail.com",
-            pass: 'jpQcDfJ6GBEr5MS4'
+            user: user,
+            pass: pass
         }, tls: {
             rejectUnauthorized: false
         },
@@ -16,7 +20,7 @@ const SendEmailUtility = async (EmailTo, EmailText, EmailSubject) => {
 
 
     let mailOptions = {
-        from: 'Task Manager MERN <sumitbarua14@gmail.com>',
+        from: 'Task Manager MERN <baruasumit97@gmail.com>',
         to: EmailTo,
         subject: EmailSubject,
         text: EmailText
